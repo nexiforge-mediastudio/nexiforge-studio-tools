@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexiForge Studio Tools - Free Creator AI Utilities</title>
+    <!-- Google AdSense Script Placeholder -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        header h1 {
+            color: #38bdf8;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+        .container {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border: 1px solid #334155;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #475569;
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+        input:focus, select:focus {
+            border-color: #38bdf8;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #0284c7;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #0369a1;
+        }
+        .results-box {
+            margin-top: 25px;
+            display: none;
+        }
+        .card {
+            background-color: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #38bdf8;
+            margin-bottom: 15px;
+        }
+        .card h3 {
+            color: #38bdf8;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .card p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            color: #64748b;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NexiForge Studio Tools</h1>
+        <p>Free AI Hook & Script Generator for Viral Content Creators</p>
+    </header>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="topic">Video Topic / Niche:</label>
+            <input type="text" id="topic" placeholder="e.g. Calisthenics tips, Tech tricks, Family Vlogs...">
+        </div>
+
+        <div class="form-group">
+            <label for="language">Select Output Language:</label>
+            <select id="language">
+                <option value="en">English (Global Target)</option>
+                <option value="roman_urdu">Roman Urdu (PK / IN Target)</option>
+                <option value="urdu">Urdu (اردو)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="platform">Platform:</label>
+            <select id="platform">
+                <option value="TikTok / Shorts">TikTok / YouTube Shorts</option>
+                <option value="Instagram Reel">Instagram Reel</option>
+                <option value="Long YouTube Video">Long YouTube Video</option>
+            </select>
+        </div>
+
+        <button onclick="generateScript()">Generate Viral Hook & Script</button>
+
+        <div class="results-box" id="resultsBox">
+            <div class="card">
+                <h3>Option 1: The Shocking Hook</h3>
+                <p id="hook1"></p>
+            </div>
+            <div class="card">
+                <h3>Option 2: The Question Hook</h3>
+                <p id="hook2"></p>
+            </div>
+            <div class="card">
+                <h3>Option 3: The Common Mistake Hook</h3>
+                <p id="hook3"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 NexiForge Media Studio. All rights reserved.
+    </footer>
+
+    <script>
+        function generateScript() {
+            const topic = document.getElementById('topic').value.trim();
+            const lang = document.getElementById('language').value;
+            const resultsBox = document.getElementById('resultsBox');
+            
+            if (!topic) {
+                alert('Please enter a topic first!');
+                return;
+            }
+
+            if (lang === 'en') {
+                document.getElementById('hook1').innerText = `Stop scrolling if you want to master ${topic}! Most people get this completely wrong...`;
+                document.getElementById('hook2').innerText = `Did you know this secret about ${topic}? Here is what no one tells you...`;
+                document.getElementById('hook3').innerText = `The biggest mistake you are making with ${topic} (and how to fix it in 30 seconds)!`;
+            } else if (lang === 'roman_urdu') {
+                document.getElementById('hook1').innerText = `Ruko! Agar aap ${topic} mein expert banna chahte ho, toh yeh ghalti kabhi mat karna...`;
+                document.getElementById('hook2').innerText = `Kya aapko ${topic} ka yeh secret pata tha? 99% log yeh nahi jaante...`;
+                document.getElementById('hook3').innerText = `${topic} banate waqt sabse badi ghalti jo aap kar rahe ho (aur iska simple solution)!`;
+            } else if (lang === 'urdu') {
+                document.getElementById('hook1').innerText = `روکیں! اگر آپ ${topic} سیکھنا چاہتے ہیں، تو یہ غلطی ہرگز نہ کریں...`;
+                document.getElementById('hook2').innerText = `کیا آپ کو ${topic} کا یہ راز معلوم تھا؟ 99 فیصد لوگ یہ نہیں جانتے...`;
+                document.getElementById('hook3').innerText = `${topic} کے بارے میں سب سے بڑی غلطی جو آپ کر رہے ہیں (اور اس کا آسان حل)!`;
+            }
+
+            resultsBox.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
